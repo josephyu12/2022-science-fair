@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Audio Classification</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .containerdiv{width: 20em; text-align:center;margin:auto;}
+            </style>
+    </head>
+        
+    <body>
+        <br>
+        <h1 class="text-center">Speech Classifier</h1>
+        <br>
+        <div class="containerdiv">
+        <form class="text-center" action='/' method="POST" enctype="multipart/form-data">
+            <input class="form-control center" type="file" name="audio">
+            <br>
+            <input class="btn btn-primary mt-3" type="submit" value="Predict Audio">
+        </form>
+        <br>
+        </div>
+
+        {% if prediction %}
+            <p class="text-center"> Speech is <b>{{prediction}}</b> ({{confidence}} Probability)</p>
+        {% endif %}
+
+    </body>
+</html>
